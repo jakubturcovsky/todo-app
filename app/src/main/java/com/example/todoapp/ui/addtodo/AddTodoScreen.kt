@@ -28,11 +28,13 @@ fun AddTodoScreen() {
                 text = "Todo List",
                 fontSize = 20.sp,
                 color = Color.White,
-                ) }
-        Column(modifier = Modifier
-            .wrapContentSize()
-            .fillMaxWidth()
-            .padding(all=15.dp),
+            )
+        }
+        Column(
+            modifier = Modifier
+                .wrapContentSize()
+                .fillMaxWidth()
+                .padding(all = 15.dp),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Center
 
@@ -41,9 +43,8 @@ fun AddTodoScreen() {
             TextFieldTodo()
         }
 
-        }
-        ListOfTodos()
     }
+}
 
 
 @Composable
@@ -62,37 +63,18 @@ fun TextFieldTodo(
     )
 
     OutlinedTextField(
-        value = descriptionState, onValueChange = {descriptionState = it},
-        placeholder = { Text(text = "Description") } )
+        value = descriptionState, onValueChange = { descriptionState = it },
+        placeholder = { Text(text = "Description") })
 
-        Button(
+    Button(
         onClick = {
             val todo = Todo(title = titleState, description = descriptionState)
             Database.todos.add(todo)
-
         }
     ) {
         Text(text = "Add")
     }
 }
 
-@Composable
-fun ListOfTodos() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-    ) {
-        val todosState by remember {
-            mutableStateOf(listOf(""))
-        }
-        LazyColumn (){
-            items (todosState.size)
-             { index ->
-                Text(text = todosState[index])
 
-            }
-        }
-
-    }
-}
 
