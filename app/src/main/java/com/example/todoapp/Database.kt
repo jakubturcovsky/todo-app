@@ -4,5 +4,5 @@ import com.example.todoapp.domain.Todo
 
 object Database {
 
-    val todos: List<Todo> = mutableListOf()
+    val todos: MutableList<Todo> = mutableListOf()
 }
