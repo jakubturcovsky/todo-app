@@ -17,6 +17,7 @@ import com.example.todoapp.ui.theme.TodoAppTheme
 import com.example.todoapp.ui.todolist.TodoListScreen
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

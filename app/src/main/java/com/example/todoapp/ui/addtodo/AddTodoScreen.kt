@@ -18,7 +18,9 @@ import com.example.todoapp.domain.Todo
 
 
 @Composable
-fun AddTodoScreen() {
+fun AddTodoScreen(
+    navigateToTodoListScreen: () -> Unit,
+) {
     Column {
         TopAppBar {
             Text(
@@ -37,7 +39,7 @@ fun AddTodoScreen() {
 
 
         ) {
-            TextFieldTodo()
+            TextFieldTodo(navigateToTodoListScreen)
         }
 
     }
@@ -46,6 +48,7 @@ fun AddTodoScreen() {
 
 @Composable
 fun TextFieldTodo(
+    navigateToTodoListScreen: () -> Unit,
 ) {
     var titleState by remember {
         mutableStateOf("")
@@ -67,6 +70,7 @@ fun TextFieldTodo(
         onClick = {
             val todo = Todo(title = titleState, description = descriptionState)
             Database.todos.add(todo)
+            navigateToTodoListScreen()
         }
     ) {
         Text(text = "Add")

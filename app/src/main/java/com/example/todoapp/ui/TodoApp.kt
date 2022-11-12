@@ -1,7 +1,5 @@
 package com.example.todoapp.ui
 
-import android.provider.ContactsContract
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -30,23 +28,3 @@ fun TodoApp() {
     }
 }
 
-@Composable
-fun AppNavHost(
-    navController: NavHostController,
-) {
-    NavHost(
-        navController = navController,
-        startDestination = "todolist"
-    ) {
-        composable("todolist") {
-            TodoListScreen(
-                navigateToAddTodo = { navController.navigate("addtodo") },
-            )
-        }
-        composable("addtodo") {
-            AddTodoScreen(
-                navigateToTodoList = { navController.navigate("todolist") }
-            )
-        }
-    }
-}
