@@ -11,23 +11,17 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.todoapp.ui.TodoApp
 import com.example.todoapp.ui.addtodo.AddTodoScreen
 import com.example.todoapp.ui.theme.TodoAppTheme
 import com.example.todoapp.ui.todolist.TodoListScreen
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TodoAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-                    Column {
-                        AddTodoScreen()
-                        TodoListScreen()
-                    }
-                }
-            }
+            TodoApp()
         }
     }
 }
