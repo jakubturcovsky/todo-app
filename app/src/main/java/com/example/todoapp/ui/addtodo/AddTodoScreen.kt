@@ -2,6 +2,7 @@ package com.example.todoapp.ui.addtodo
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.mutableStateOf
@@ -22,20 +23,23 @@ fun AddTodoScreen(
     navigateToTodoListScreen: () -> Unit,
 ) {
     Column {
-        TopAppBar {
+        TopAppBar(
+        ) {
             Text(
                 text = "Todo List",
                 fontSize = 20.sp,
                 color = Color.White,
+                modifier = Modifier.padding(start = 7.dp)
+
             )
         }
         Column(
             modifier = Modifier
-                .wrapContentSize()
+                .height(250.dp)
                 .fillMaxWidth()
-                .padding(all = 15.dp),
+                .padding(all = 30.dp),
             horizontalAlignment = Alignment.Start,
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.SpaceEvenly
 
 
         ) {
@@ -71,7 +75,13 @@ fun TextFieldTodo(
             val todo = Todo(title = titleState, description = descriptionState)
             Database.todos.add(todo)
             navigateToTodoListScreen()
-        }
+        },
+        shape = RoundedCornerShape(40),
+        elevation = ButtonDefaults.elevation(
+            defaultElevation = 10.dp,
+            pressedElevation = 20.dp,
+            disabledElevation = 0.dp
+        )
     ) {
         Text(text = "Add")
     }
