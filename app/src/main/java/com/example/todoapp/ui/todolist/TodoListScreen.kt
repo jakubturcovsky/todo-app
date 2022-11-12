@@ -26,12 +26,6 @@ fun TodoListScreen() {
             TodoView(todo = todo)
         }
     }
-    // 1. Add button for going to AddTodoScreen
-    // 2. Implement AddTodoScreen
-    // 3. Implement todolist
-   // Ma to byt jenom v te TodoListScreen, zadny ListOfTodos na obrazovce pro pridani todo neni.
-   // Nikde nevidim, ze bys z databaze brala ten list todocek, ktere chces uzivateli zobrazit
-   // Ten state neni potreba, items bere jako parametr ten list todocek, ne state.
 
 }
 

@@ -15,9 +15,6 @@ import androidx.compose.ui.unit.sp
 import com.example.todoapp.Database
 import com.example.todoapp.domain.Todo
 
-// Title
-// Description
-// Button for creating & saving todo
 
 
 @Composable
