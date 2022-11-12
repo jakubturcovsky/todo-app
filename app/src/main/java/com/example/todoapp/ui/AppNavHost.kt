@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.todoapp.ui.addtodo.AddTodoScreen
+import com.example.todoapp.ui.edittodo.EditTodoScreen
 import com.example.todoapp.ui.todolist.TodoListScreen
 
 @Composable
@@ -25,5 +26,11 @@ fun AppNavHost(
                 navigateToTodoListScreen = { navController.navigate("todolist") }
             )
         }
+        composable("edittodo") {
+            EditTodoScreen(
+                navigateToTodoListScreen = { navController.navigate("todolist") }
+            )
+        }
+
     }
 }
