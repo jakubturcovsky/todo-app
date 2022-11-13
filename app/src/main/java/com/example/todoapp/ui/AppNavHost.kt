@@ -19,16 +19,18 @@ fun AppNavHost(
         composable("todolist") {
             TodoListScreen(
                 navigateToAddTodoScreen = { navController.navigate("addtodo") },
+                navigateToEditTodoScreen = { navController.navigate("edittodo")}
             )
         }
         composable("addtodo") {
             AddTodoScreen(
-                navigateToTodoListScreen = { navController.navigate("todolist") }
+                navigateToTodoListScreen = { navController.navigate("todolist") },
             )
         }
+
         composable("edittodo") {
             EditTodoScreen(
-                navigateToTodoListScreen = { navController.navigate("todolist") }
+                navigateToTodoListScreen = { navController.navigate("todolist") },
             )
         }
 
